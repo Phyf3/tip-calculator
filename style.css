@@ -1,0 +1,143 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-size:16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    background-color: hsl(185, 41%, 84%);
+    padding-top: 2.5rem;
+
+}
+.logo {
+    padding-left: 6.25rem;
+}
+
+.functions {
+    background-color: hsl(0, 0%, 100%);
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+    border-top-right-radius: 1.25rem;
+    border-top-left-radius: 1.25rem;
+    margin-top: 2.8125rem;
+}
+
+.calculator-display, .people-display {
+    display: grid;
+}
+
+.input-container {
+    margin-top: .375rem;
+    display: flex;
+    border: 0 solid white;
+    background-color: #f3f8fa;
+    width:20vw;
+    height: 1.875rem;
+}
+.input-container img {
+    width : .9375rem;
+    height: .9375rem;
+    padding-top: .4375rem;
+    padding-left: .625rem;
+}
+.input-container input{
+    background-color: #f3f8fa;
+    border:none;
+    text-align: end;
+    width:80vw;
+    padding-left: 2.125rem;
+    padding-right: 1rem;
+    font-weight: 700;
+    font-size:medium;
+    color:#004649;
+}
+
+
+.select-tip {
+    margin-top: 1.5625rem;
+    display: grid;
+    padding-right: 1.875rem;
+}
+
+.number-buttons {
+    margin-top: .1875rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap:1em;
+    column-gap: .125rem
+}
+
+.number-buttons button, .number-buttons input {
+    width :8rem;
+    height: 2.6rem;
+    border: 0 solid;
+    border-radius: .3125rem;
+    font-weight: 700;
+    font-size:medium;
+    background-color: #004649;
+    color:white;
+}
+/*.number-buttons button:focus-within {
+    
+}*/
+
+.button-bg {
+    background-color: #24c3aa;
+}
+.number-buttons input {
+    background-color:#f3f8fa ;
+    color: #004649;
+    text-align:center;
+}
+
+.people-display {
+    margin-top: 1.25rem
+}
+
+.result {
+    display: grid;
+    margin-top: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    background-color: #004649;
+    color:white;
+    width:65vw;
+    border-radius: .625rem;
+}
+
+.info {
+    display: grid;
+}
+.info strong {
+    font-weight: 400;
+    font-size: medium;
+}
+.info span{
+    color:hsl(185, 41%, 84%);
+}
+.tip-per-person, .total-per-person {
+    padding-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+.amount {
+    font-size:x-large;
+    color: #24c3aa;
+}
+
+.result button {
+    margin-top: 1.25rem;
+    border: 0 solid;
+    height: 1.875rem;
+    text-transform: uppercase;
+    background-color: #24c3aa;
+    color: #004649 ;
+    font-weight: 600;
+    border-radius: .3125rem;
+    font-size:medium;
+}

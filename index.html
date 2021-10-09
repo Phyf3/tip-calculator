@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="style.css">
+<style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+  
+    <div class="logo">
+      <img src="images/logo.svg" alt="">
+    </div>
+
+    <div class="functions">
+      <div class="calculator">
+        <div class="calculator-display">
+          <span>Bill</span>
+          <div class="input-container">
+            <img src="images/icon-dollar.svg" alt="dollar">
+            <input id="billAmount" type="number">
+          </div>
+ 
+        </div>
+       
+        <div class="select-tip">
+            <span>Select Tip %</span>
+          <div class="number-buttons" id = "percentages">
+            <button class = "tipButton activeButton" value = "0.05" >5%</button> 
+            <button class = "tipButton" value = "0.10" >10%</button>
+            <button class = "tipButton" value = "0.15" >15%</button>
+            <button class = "tipButton" value = "0.25" >25%</button>
+            <button class = "tipButton" value = "0.50" >50%</button>
+            <input id = "custom" type="number" placeholder = "CUSTOM">
+          </div>
+
+        </div>
+
+     <!--  <div class="select-tip">
+          <span>Select Tip %</span>
+        <select class="number-buttons" id = "percentages">
+          <option class = "tipButton activeButton" value = "0.05" >5%</button> 
+          <option class = "tipButton" value = "0.10" >10%</option>
+          <option class = "tipButton" value = "0.15" >15%</option>
+          <option class = "tipButton" value = "0.25" >25%</option>
+          <option class = "tipButton" value = "0.50" >50%</option>
+          <input id = "custom" type="number" placeholder = "CUSTOM">
+        </select>
+
+        </div>-->
+
+
+       <div class="people-display">
+          <span>Number of People</span>
+          <div class="input-container">
+            <img src="images/icon-person.svg" alt="person-icon">
+            <input id="presentPeople" type="number">
+          </div>
+        </div>
+     </div>
+
+
+      <div class="result">
+        <div class="tip-per-person">
+          <div class="info">
+            <strong>Tip Amount</strong>
+            <span id = "perPerson">/ person</span>
+          </div>
+
+
+          <div id="tip" class="amount"> $0.00 </div>
+          
+        </div>  
+
+        <div id = "totalTip" class="total-per-person">
+          <div class="info">
+            <strong>Total</strong>
+            <span>/ person</span>
+          </div>
+      
+          
+          <div id = "amount" class="amount"> $0.00 </div>
+        </div>
+
+      
+        <button id ="reset" class="reset">Reset</button>
+        
+      </div>
+    </div>
+  <div class="error">Enter something</div>
+
+  </div>
+
+
+
+  <!--<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.-->
+  </div>
+  <script src="tip-calculator.js" defer></script>
+</body>
+</html>
