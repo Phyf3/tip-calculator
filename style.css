@@ -23,7 +23,7 @@ body {
     border-top-right-radius: 1.25rem;
     border-top-left-radius: 1.25rem;
     margin-top: 2.8125rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: .5rem;
 }
 
 .calculator-display, .people-display {
@@ -46,7 +46,7 @@ body {
     outline: red auto 3px;
 }
 
-.people-text {
+.display-text {
     display: flex;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 .number-buttons {
-    margin-top: .1875rem;
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap:1em;
@@ -102,7 +102,7 @@ body {
 }
 
 .number-buttons button, .number-buttons input {
-    width : 7.5rem;
+    width : 8rem;
     height: 3rem;
     border: 0 solid;
     border-radius: .3125rem;
@@ -113,7 +113,7 @@ body {
 }
 .number-buttons button:focus-within, .number-buttons button:hover {
     background-color: #24c3aa;
-    outline: 5px solid #e8ebec;
+    outline: 1px solid #e8ebec;
 }*/
 .number-buttons button:visited {
     background-color: aliceblue;
@@ -125,11 +125,17 @@ body {
     text-align:center;
 }
 .number-buttons input:focus-within{
-    outline:#24c3aa auto 3px;
+    outline:#24c3aa auto 1px;
 }
 
 .people-display {
-    margin-top: 1.25rem
+    margin-top: 2.25rem
+}
+
+.calculator-display span, .select-tip span, .display-text span {
+    font-size: large;
+    font-weight:600;
+    color: #7b9191;
 }
 
 .result {
@@ -140,7 +146,7 @@ body {
     padding-bottom: 1.25rem;
     background-color: #004649;
     color:white;
-    width:65vw;
+    width:73vw;
     border-radius: .625rem;
 }
 
@@ -168,7 +174,6 @@ body {
 
 .reset-tip {
     padding-top: 0..125rem;
-    padding-bottom: rem;
 }
 
 .reset-tip button {
@@ -182,9 +187,11 @@ body {
     font-weight: 700;
     border-radius: .3125rem;
     font-size:medium;
+    margin-left: 4vw;;
 }
-.reset:focus-within {
+.reset:active {
     background-color: #6d7879;
+    outline:none;
 }
 
 @media screen and (min-width: 768px) {

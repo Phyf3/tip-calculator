@@ -10,7 +10,7 @@ let people = 1;
 let tipPercentage = 0.05;
 const peopleError = document.getElementById('error')
 const outline = document.getElementById('input');
-const resetBtn = document.getElementById('reset');
+const resetBtn = document.getElementById('reset_btn');
 
 const calculateTip = () => {
     let tip = (tipPercentage * inputedAmount) / people
@@ -21,6 +21,11 @@ const calculateTip = () => {
 const theResult = (tip, total) => {
     tipPerPerson.textContent = "$" + tip.toFixed(2);
     totalTip.textContent ="$" + total.toFixed(2);
+}
+
+const resetResult = (tip, total) => {
+    tipPerPerson.textContent = "$0.00"
+    totalTip.textContent = "$0.00" 
 }
 
 
@@ -92,12 +97,5 @@ console.log(theResult());
 const resetCalculator = () => {
     disableTipButton();
     diableCustomTip();
-    theResult(0,0)
-    people = 0;
-    tipPercentage = 0.05;
-    inputedAmount = 0;
-    tipPerPerson.textContent = "0"
-    totalTip.textContent ="0"
+    resetResult();
 }
-
-resetBtn.addEventListener('click', resetCalculator)
