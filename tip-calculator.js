@@ -6,9 +6,11 @@ const clickedButton = document.querySelector('.activeButton');
 let tipPerPerson = document.getElementById('tip');
 let totalTip = document.getElementById('amount')
 let inputedAmount = 0;
-let people = 0;
-let tipPercentage = 0;
-
+let people = 1;
+let tipPercentage = 0.05;
+const peopleError = document.getElementById('error')
+const outline = document.getElementById('input');
+const resetBtn = document.getElementById('reset');
 
 const calculateTip = () => {
     let tip = (tipPercentage * inputedAmount) / people
@@ -17,28 +19,19 @@ const calculateTip = () => {
 }
 
 const theResult = (tip, total) => {
-    tipPerPerson.textContent = tip.toFixed(2);
-    totalTip.textContent = total.toFixed(2);
+    tipPerPerson.textContent = "$" + tip.toFixed(2);
+    totalTip.textContent ="$" + total.toFixed(2);
 }
 
-
-
-const errorForBill = () => {
-    if (inputedAmount === "") {
-        billAmount.textContent = "Enter your bill"
-    }
-}
-
-const errorForCustomTip = () => {
-    if (tipPercentage == 0) {
-        alert("Enter a percentage or pick a value")
-    }
-}
 
 const errorForPeople = () => {
-    if (people < 1) {
-        people.textContent = "Type a num"
-    }
+    peopleError.classList.add('error-message');
+    peopleError.classList.add('show');
+    outline.classList.add('error-outline')
+}
+const ignoreErrorForPeople = () => {
+    peopleError.remove()
+    outline.classList.remove('error-outline')
 }
 
 
@@ -57,7 +50,6 @@ const disableTipButton = () => {
 billAmount.addEventListener('input', (number) => {
     const {value} = number.target;
     inputedAmount = parseFloat(value);
-    calculateTip();
     console.log(inputedAmount);
 })
 
@@ -66,10 +58,9 @@ tipButton.forEach((button) => {
     button.addEventListener('click', () => {
         diableCustomTip();
         tipPercentage = parseFloat(button.value)
-        calculateTip();
+        //calculateTip();
         console.log(tipPercentage);
     })
-    
 })
 
 //Getting the Custom Tip Through the Inputed value
@@ -77,7 +68,7 @@ custom.addEventListener('input', (number) => {
     const {value} =  number.target //target of the entered value is the number
     if(value !== "") {
         tipPercentage = parseFloat(value) / 100; //the tip is the number i entered of course
-        calculateTip();
+        //calculateTip();
     } 
     console.log(tipPercentage);
 })
@@ -85,23 +76,28 @@ custom.addEventListener('input', (number) => {
 peopleNum.addEventListener('input', (number) => {
     const {value} = number.target;
     people = parseFloat(value);
-    if(people < 1) {
-        people.textContent = "nahhS"
-        return;
+    if (!people || people < 1) {
+        errorForPeople();
     } else {
-        calculateTip(); 
-        console.log(people)
+        ignoreErrorForPeople()
     }
 
+    calculateTip(); 
     console.log(people);
 })
 
 console.log(theResult());
 
-const resetButton = () => {
-    people, inputedAmount = 0
-    theResult(0, 0);
-    tip = 15;
 
+const resetCalculator = () => {
+    disableTipButton();
+    diableCustomTip();
+    theResult(0,0)
+    people = 0;
+    tipPercentage = 0.05;
+    inputedAmount = 0;
+    tipPerPerson.textContent = "0"
+    totalTip.textContent ="0"
 }
 
+resetBtn.addEventListener('click', resetCalculator)
