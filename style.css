@@ -5,16 +5,15 @@
 
 body {
     font-size:16px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: monospace;
+    background-color: hsl(185, 41%, 84%);
 }
 
 .container {
-    background-color: hsl(185, 41%, 84%);
     padding-top: 2.5rem;
-
 }
 .logo {
-    padding-left: 6.25rem;
+    padding-left: 35vw;
 }
 
 .functions {
@@ -24,6 +23,7 @@ body {
     border-top-right-radius: 1.25rem;
     border-top-left-radius: 1.25rem;
     margin-top: 2.8125rem;
+    padding-bottom: 2.5rem;
 }
 
 .calculator-display, .people-display {
@@ -35,25 +35,55 @@ body {
     display: flex;
     border: 0 solid white;
     background-color: #f3f8fa;
+    height: 3.3875rem;
     width:20vw;
-    height: 1.875rem;
 }
-.input-container img {
-    width : .9375rem;
-    height: .9375rem;
-    padding-top: .4375rem;
-    padding-left: .625rem;
+
+.input-container:focus-within {
+    outline:#24c3aa auto 3px;
 }
-.input-container input{
+.error-outline:focus-within {
+    outline: red auto 3px;
+}
+
+.people-text {
+    display: flex;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-weight: 400;
+    margin-left: 1.2rem;
+}
+.show {
+    display: block;
+}
+
+
+.bill-input, .people-input{
+    background: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5%;
     background-color: #f3f8fa;
     border:none;
     text-align: end;
-    width:80vw;
     padding-left: 2.125rem;
     padding-right: 1rem;
     font-weight: 700;
-    font-size:medium;
-    color:#004649;
+    font-size:larger ;
+    color:#215a57;
+}
+.people-input {
+    background:url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5%;
+    background-color: #f3f8fa;
+}
+.input-container input:focus-within {
+    outline: none;
 }
 
 
@@ -72,26 +102,30 @@ body {
 }
 
 .number-buttons button, .number-buttons input {
-    width :8rem;
-    height: 2.6rem;
+    width : 7.5rem;
+    height: 3rem;
     border: 0 solid;
     border-radius: .3125rem;
     font-weight: 700;
-    font-size:medium;
+    font-size:x-large;
     background-color: #004649;
     color:white;
 }
-/*.number-buttons button:focus-within {
-    
-}*/
-
-.button-bg {
+.number-buttons button:focus-within, .number-buttons button:hover {
     background-color: #24c3aa;
+    outline: 5px solid #e8ebec;
+}*/
+.number-buttons button:visited {
+    background-color: aliceblue;
 }
+
 .number-buttons input {
     background-color:#f3f8fa ;
     color: #004649;
     text-align:center;
+}
+.number-buttons input:focus-within{
+    outline:#24c3aa auto 3px;
 }
 
 .people-display {
@@ -115,29 +149,74 @@ body {
 }
 .info strong {
     font-weight: 400;
-    font-size: medium;
+    font-size:large;
 }
 .info span{
     color:hsl(185, 41%, 84%);
 }
 .tip-per-person, .total-per-person {
-    padding-top: 1.25rem;
+    margin-top: 3.0625rem;
     display: flex;
     justify-content: space-between;
 }
 .amount {
-    font-size:x-large;
+    font-size: 2.125rem;
+    font-weight: 700;
     color: #24c3aa;
+    margin-right: .9375rem;
 }
 
-.result button {
-    margin-top: 1.25rem;
+.reset-tip {
+    padding-top: 0..125rem;
+    padding-bottom: rem;
+}
+
+.reset-tip button {
+    margin-top: 3.25rem;
     border: 0 solid;
-    height: 1.875rem;
+    height: 2.575rem;
+    width: 65vw;
     text-transform: uppercase;
     background-color: #24c3aa;
     color: #004649 ;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: .3125rem;
     font-size:medium;
+}
+.reset:focus-within {
+    background-color: #6d7879;
+}
+
+@media screen and (min-width: 768px) {
+
+    .logo {
+        padding-left:45vw;
+        padding-bottom: 3rem;;
+    }
+    .functions {
+        display: flex;
+        margin: 0 auto;
+        width: 57.75rem;
+        justify-content: space-between;
+        border-radius: 1.7rem;
+        padding-top:2rem;
+    }
+    .result {
+        width: 20.6875rem;
+        height : 22.0625rem;
+        margin-right: 5.625rem;
+        border-radius: 1.3rem;
+    }
+    .amount {
+        font-size: 3.125rem;
+    }
+    .reset-tip button {
+        width:17rem;
+        font-size: larger;
+        margin-left : 2.0rem;
+    }
+    .people-text {
+        justify-content: space-between;
+    }
+
 }

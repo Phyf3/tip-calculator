@@ -27,8 +27,7 @@
         <div class="calculator-display">
           <span>Bill</span>
           <div class="input-container">
-            <img src="images/icon-dollar.svg" alt="dollar">
-            <input id="billAmount" type="number">
+            <input id="billAmount" class="bill-input" type="number">
           </div>
  
         </div>
@@ -41,63 +40,53 @@
             <button class = "tipButton" value = "0.15" >15%</button>
             <button class = "tipButton" value = "0.25" >25%</button>
             <button class = "tipButton" value = "0.50" >50%</button>
-            <input id = "custom" type="number" placeholder = "CUSTOM">
+            <input id = "custom" type="number" placeholder = "Custom">
           </div>
 
         </div>
 
-     <!--  <div class="select-tip">
-          <span>Select Tip %</span>
-        <select class="number-buttons" id = "percentages">
-          <option class = "tipButton activeButton" value = "0.05" >5%</button> 
-          <option class = "tipButton" value = "0.10" >10%</option>
-          <option class = "tipButton" value = "0.15" >15%</option>
-          <option class = "tipButton" value = "0.25" >25%</option>
-          <option class = "tipButton" value = "0.50" >50%</option>
-          <input id = "custom" type="number" placeholder = "CUSTOM">
-        </select>
-
-        </div>-->
-
-
        <div class="people-display">
-          <span>Number of People</span>
-          <div class="input-container">
-            <img src="images/icon-person.svg" alt="person-icon">
-            <input id="presentPeople" type="number">
+         <div class="people-text">
+            <span>Number of People</span>
+            <span id ="error" class ="error-message"> Can't be Zero</span>
+         </div>
+
+          <div id = "input" class="input-container">
+            <input id="presentPeople"  class="people-input" type="number">
           </div>
         </div>
      </div>
 
 
       <div class="result">
-        <div class="tip-per-person">
-          <div class="info">
-            <strong>Tip Amount</strong>
-            <span id = "perPerson">/ person</span>
+        <div class="tips">
+          <div class="tip-per-person">
+            <div class="info">
+              <strong>Tip Amount</strong>
+              <span id = "perPerson">/ person</span>
+            </div>
+  
+  
+            <div id="tip" class="amount"> $0.00 </div>
+            
+          </div>  
+  
+          <div id = "totalTip" class="total-per-person">
+            <div class="info">
+              <strong>Total</strong> 
+              <span>/ person</span>
+            </div>
+        
+            
+            <div id = "amount" class="amount"> $0.00 </div>
           </div>
-
-
-          <div id="tip" class="amount"> $0.00 </div>
-          
-        </div>  
-
-        <div id = "totalTip" class="total-per-person">
-          <div class="info">
-            <strong>Total</strong>
-            <span>/ person</span>
-          </div>
-      
-          
-          <div id = "amount" class="amount"> $0.00 </div>
         </div>
 
-      
-        <button id ="reset" class="reset">Reset</button>
-        
+        <div class="reset-tip">
+          <button id ="reset" class="reset">Reset</button>
+        </div>
       </div>
     </div>
-  <div class="error">Enter something</div>
 
   </div>
 
