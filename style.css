@@ -1,4 +1,4 @@
-@import url(https://fonts.google.com/specimen/Space+Mono);
+@import url('https://fonts.google.com/specimen/Space+Mono');
 
 *{
     padding:0;
@@ -147,7 +147,7 @@ body {
     color:white;
     width:73vw;
     border-radius: .625rem;
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', monospace;
 }
 
 .info {
