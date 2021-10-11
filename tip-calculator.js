@@ -9,8 +9,16 @@ let inputedAmount = 0;
 let people = 1;
 let tipPercentage = 0.05;
 const peopleError = document.getElementById('error')
-const outline = document.getElementById('input');
-const resetBtn = document.getElementById('reset_btn');
+const outline = document.getElementsByClassName('input');
+const resetCalcBtn = document.getElementById('reset')
+
+
+
+const theResult = (tip, total) => {
+    tipPerPerson.textContent = "$" + tip.toFixed(2);
+    totalTip.textContent ="$" + total.toFixed(2);
+}
+
 
 const calculateTip = () => {
     let tip = (tipPercentage * inputedAmount) / people
@@ -18,36 +26,26 @@ const calculateTip = () => {
     theResult(tip, total);
 }
 
-const theResult = (tip, total) => {
-    tipPerPerson.textContent = "$" + tip.toFixed(2);
-    totalTip.textContent ="$" + total.toFixed(2);
-}
-
-const resetResult = (tip, total) => {
-    tipPerPerson.textContent = "$0.00"
-    totalTip.textContent = "$0.00" 
-}
-
-
+//Showing Error Messages 
 const errorForPeople = () => {
     peopleError.classList.add('error-message');
     peopleError.classList.add('show');
-    outline.classList.add('error-outline')
+    peopleNum.classList.add('error-outline')
 }
 const ignoreErrorForPeople = () => {
     peopleError.remove()
-    outline.classList.remove('error-outline')
+    peopleNum.classList.remove('error-outline')
 }
 
 
-//When there's a bill amount - disable custom by seeing to an empty string
+//replaces custom tip with a string when a tip button is clicked intead
 const diableCustomTip = () => {
     custom.value = "";
 };
 //disable the tip buttons when the custom tip is used instead
 const disableTipButton = () => {
     tipButton.forEach((button) => {
-        button.value = ""
+        button.value = "";
     })
 }
 
@@ -68,10 +66,12 @@ tipButton.forEach((button) => {
     })
 })
 
+
 //Getting the Custom Tip Through the Inputed value
 custom.addEventListener('input', (number) => {
     const {value} =  number.target //target of the entered value is the number
     if(value !== "") {
+        disableTipButton();
         tipPercentage = parseFloat(value) / 100; //the tip is the number i entered of course
         //calculateTip();
     } 
@@ -83,6 +83,7 @@ peopleNum.addEventListener('input', (number) => {
     people = parseFloat(value);
     if (!people || people < 1) {
         errorForPeople();
+        return;
     } else {
         ignoreErrorForPeople()
     }
@@ -91,11 +92,17 @@ peopleNum.addEventListener('input', (number) => {
     console.log(people);
 })
 
-console.log(theResult());
+const resetCalc = () => {
+    tip = 0;
+    total = 0;
+    theResult(0,0);
+    billAmount.value = ""
+    peopleNum.value = ""
+    errorForPeople();
+    ignoreErrorForPeople();
+    //alert('ka ching!')
+};
+
+resetCalcBtn.addEventListener('click', resetCalc);
 
 
-const resetCalculator = () => {
-    disableTipButton();
-    diableCustomTip();
-    resetResult();
-}

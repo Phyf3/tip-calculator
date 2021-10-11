@@ -30,19 +30,13 @@ body {
     display: grid;
 }
 
-.input-container {
-    margin-top: .375rem;
-    display: flex;
-    border: 0 solid white;
-    background-color: #f3f8fa;
-    height: 3.3875rem;
-    width:20vw;
-}
-
-.input-container:focus-within {
+.input:focus-within {
     outline:#24c3aa auto 3px;
 }
 .error-outline:focus-within {
+    outline: red auto 3px;
+}
+.error-outline {
     outline: red auto 3px;
 }
 
@@ -74,6 +68,8 @@ body {
     font-weight: 700;
     font-size:larger ;
     color:#215a57;
+    height: 2.3875rem;
+    width:63vw;
 }
 .people-input {
     background:url(images/icon-person.svg);
@@ -82,7 +78,7 @@ body {
     background-position-x: 5%;
     background-color: #f3f8fa;
 }
-.input-container input:focus-within {
+.bil-input:focus-within, .people-input:focus-within {
     outline: none;
 }
 
@@ -189,7 +185,7 @@ body {
     font-size:medium;
     margin-left: 4vw;;
 }
-.reset:active {
+.reset-tip button:active {
     background-color: #6d7879;
     outline:none;
 }
@@ -206,13 +202,22 @@ body {
         width: 57.75rem;
         justify-content: space-between;
         border-radius: 1.7rem;
-        padding-top:2rem;
+        padding-top:3rem;
+    }
+   
+    .number-buttons {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .bill-input, .people-input {
+        width: 20.6875rem;
+        height:3rem;
     }
     .result {
         width: 20.6875rem;
         height : 22.0625rem;
         margin-right: 5.625rem;
         border-radius: 1.3rem;
+        margin-bottom: 3rem;
     }
     .amount {
         font-size: 3.125rem;
