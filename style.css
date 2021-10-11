@@ -1,4 +1,4 @@
-@import url('https://fonts.google.com/specimen/Space+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 *{
     padding:0;
@@ -133,7 +133,7 @@ body {
 
 .calculator-display span, .select-tip span, .display-text span {
     font-size: large;
-    font-weight:600;
+    font-weight:700;
     color: #7b9191;
 }
 
