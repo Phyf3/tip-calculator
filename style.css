@@ -1,3 +1,5 @@
+@import url(https://fonts.google.com/specimen/Space+Mono);
+
 *{
     padding:0;
     margin:0;
@@ -5,7 +7,7 @@
 
 body {
     font-size:16px;
-    font-family: monospace;
+    font-family:'Space Mono', monospace;
     background-color: hsl(185, 41%, 84%);
 }
 
@@ -78,7 +80,7 @@ body {
     background-position-x: 5%;
     background-color: #f3f8fa;
 }
-.bil-input:focus-within, .people-input:focus-within {
+.bill-input:focus-within, .people-input:focus-within {
     outline: none;
 }
 
